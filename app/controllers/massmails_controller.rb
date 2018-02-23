@@ -12,16 +12,18 @@ class MassmailsController < ApplicationController
     
   end  
   def sendengine
-    @friends = params[:email]
-    num = 0
+    @riends = params[:email]
+    @friends = @riends.split
+    #num = 0
     #@friends = ['nji@smailg.com','guy@saol.com']
     subject = params[:subject]
     body = params[:body]
     sender = params[:sender]
     #friend = @friends.each {|x| x=x.first}
     #friends = @friends.map(&:to_s)
-     @friends.each_line do |friend|
-       num += 1
+     #@friends.each_line do |friend|
+       #num += 1
+      @friends.each do |friend| 
       MassMailer.welcome(friend,subject,body,sender).deliver
     end
     redirect_to root_path
