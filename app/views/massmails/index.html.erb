@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Massmails</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @massmails.each do |massmail| %>
+      <tr>
+        <td><%= link_to 'Show', massmail %></td>
+        <td><%= link_to 'Edit', edit_massmail_path(massmail) %></td>
+        <td><%= link_to 'Destroy', massmail, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Massmail', new_massmail_path %>

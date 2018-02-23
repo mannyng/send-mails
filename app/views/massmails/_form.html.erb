@@ -1,0 +1,17 @@
+<%= form_for(@massmail) do |f| %>
+  <% if @massmail.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@massmail.errors.count, "error") %> prohibited this massmail from being saved:</h2>
+
+      <ul>
+      <% @massmail.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

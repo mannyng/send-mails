@@ -1,0 +1,19 @@
+<div class="my-flex-container">
+
+<%= form_tag sendengine_massmails_path do%>
+
+<div class="my-flex-block">
+Email : </br><%= text_area_tag 'email', ''%></br>
+</div>
+<div class=" my-flex-block">
+From: </br><%= text_field_tag 'sender', ''%></br>
+
+subject: </br><%= text_field_tag 'subject', ''%></br>
+
+Html Body:<%= text_area_tag 'body', ''%>
+<%= submit_tag "submit",:value => "submit"%>
+</div>
+<%end%>
+
+
+</div>
