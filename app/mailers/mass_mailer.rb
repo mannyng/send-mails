@@ -10,8 +10,8 @@ class MassMailer < ApplicationMailer
         @sent_at = sent_at
         @greeting = "Welcome"
         
-        delivery_options = { user_name: Figaro.env.SMTP_KEY,
-                           password: Figaro.env.SMPT_PASS,
+        delivery_options = { user_name: "SMTP_KEY",
+                           password: "SMPT_PASS",
                            address: "mail.tuwerk.tk" }
         mail(
             subject: @subject,

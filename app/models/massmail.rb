@@ -1,2 +1,2 @@
-class Massmail < ActiveRecord::Base
+class Massmail < ApplicationRecord
 end
