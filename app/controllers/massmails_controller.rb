@@ -13,7 +13,7 @@ class MassmailsController < ApplicationController
   end  
   def sendengine
     @riends = params[:email]
-    @friends = @riends.split
+    friends = @riends.split
     #num = 0
     toreply = params[:toreply]
     data = params[:body]
@@ -26,10 +26,10 @@ class MassmailsController < ApplicationController
     #friends = @friends.map(&:to_s)
      #@friends.each_line do |friend|
        #num += 1
-      @friends.each do |friend| 
+      
       #LoanMailer.welcome(friend,toreply,data,subject,greeting,sender_name,sender).deliver
-      SendLoanEmailJob.set(wait: 40.seconds).perform_later(friend,toreply,data,subject,greeting,sender_name,sender)
-    end
+      SendLoanEmailJob.set(wait: 40.seconds).perform_later(friends,toreply,data,subject,greeting,sender_name,sender)
+    
     redirect_to root_path
   end  
   # GET /massmails/1
