@@ -6,6 +6,6 @@ class MassMailerPreview < ActionMailer::Preview
       subject = "Welcome"
       data = "Trust you are doing well!"
       sender = "loans@tuwe.tk"
-   MassMailer.welcome(friend_email,subject,data,sender,sent_at=Time.now)
+   MassMailer.welcome(friend_email,toreply,data,subject,greeting,sender_name,sender,imagepath,linkpath,sent_at=Time.now)
   end
 end
