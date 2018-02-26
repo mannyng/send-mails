@@ -1,19 +1,43 @@
-<div class="my-flex-container">
 
-<%= form_tag sendengine_massmails_path do%>
 
-<div class="my-flex-block">
-Email : </br><%= text_area_tag 'email', ''%></br>
+<%= bootstrap_form_tag url: '/massmails/sendengine' do |f| %>
+<div class="row">
+<div class="col-md-6 form-group">
+<%= f.text_area 'email', hide_label: true, placeholder: "Load emails per line...", cols: "10", rows: "20"%></br>
 </div>
-<div class=" my-flex-block">
-From: </br><%= text_field_tag 'sender', ''%></br>
+<div class="col-md-6">
+<%= f.form_group do %>
+<div class="row">
+ <div class="col-md-4">
+   <%= f.text_field 'sender_name', hide_label: true,placeholder: "Sender name"%>
+ </div>
+ <div class="col-md-4">
+   <%= f.text_field 'sender_email', hide_label: true,placeholder: "Sender Email"%>
+ </div>
+  <div class="col-md-4">
+   <%= f.text_field 'toreply', hide_label: true,placeholder: "Reply To Email"%>
+ </div>
+</div>
+<div class="row">
+ <div class="col-md-6">
+   <%= f.text_field 'imagepath', hide_label: true,placeholder: "Picture url for inline pic"%>
+ </div>
+  <div class="col-md-6">
+   <%= f.text_field 'linkpath', hide_label: true,placeholder: "Link url for clike"%>
+ </div>
+</div>
+<div class="row">
+ <div class="col-md-6">
+   <%= f.text_field 'subject', hide_label: true,placeholder: "Subject"%>
+ </div>
+  <div class="col-md-6">
+   <%= f.text_field 'greeting', hide_label: true,placeholder: "Greeting"%>
+ </div>
+</div>
 
-subject: </br><%= text_field_tag 'subject', ''%></br>
-
-Html Body:<%= text_area_tag 'body', ''%>
+<%= f.text_area 'body', hide_label: true,placeholder: "Leave a comment...", cols: "20", rows: "10"%>
 <%= submit_tag "submit",:value => "submit"%>
+<%end%>
+</div>
 </div>
 <%end%>
-
-
-</div>

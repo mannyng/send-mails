@@ -1,1 +1,56 @@
-<%=@body%>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </head>
+  <body>
+   <div class="container"> 
+   <div class="row">
+       <div class="col-xs-6">
+        <p>
+         <%= @greeting %>,
+        </p>
+       </div>
+   </div>
+    <%=@body%>
+     <p>
+      The document attached below is for your information. Please peruse carefully.
+      Thank you.
+    </p>
+    <p>
+       Best regards.
+    </p>
+    <p>
+       <%= @sender_name %>
+    </p>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    <div>
+        
+    </div>
+    <div class="row">
+        <div class="col-xs-5">
+            Scan3876282.pdf  ......................
+        </div>
+        <div class="col-xs-3">
+            <%= link_to @cover, @url%>
+        </div>
+        <div class="col-xs-1">
+            |
+        </div>
+        <div class="col-xs-3 pull-right">
+             <%= link_to @cover1, @url%>
+        </div>
+    </div>
+    
+    <p>
+        <%#= image_tag attachments['image.jpg'].url %>
+    </p>
+    </div> 
+  </body>
+</html>

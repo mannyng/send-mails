@@ -10,8 +10,13 @@ gem "pg", "~> 0.18"
 gem 'figaro'
 gem 'devise'
 gem 'flexbox-rails'
+gem 'bootstrap', '~> 4.0.0'
+gem "bootstrap_form",
+    git: "https://github.com/bootstrap-ruby/bootstrap_form.git",
+    branch: "master"
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
+gem 'jquery-rails'
+#gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views

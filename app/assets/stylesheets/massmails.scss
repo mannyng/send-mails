@@ -24,3 +24,18 @@ flex-direction: row;
 margin: auto;
 align-content: flex-end; 
 }
+.social-links{
+  a:-webkit-any-link {
+    text-decoration: none !important;
+  }
+}
+.social-links{
+  .img-thumbnail {
+    padding: .25rem;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: .25rem;
+    max-width: 20% !important;
+    height: auto;
+  }
+}

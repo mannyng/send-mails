@@ -15,16 +15,19 @@ class MassmailsController < ApplicationController
     @riends = params[:email]
     @friends = @riends.split
     #num = 0
-    #@friends = ['nji@smailg.com','guy@saol.com']
+    toreply = params[:toreply]
+    data = params[:body]
     subject = params[:subject]
-    body = params[:body]
-    sender = params[:sender]
-    #friend = @friends.each {|x| x=x.first}
+    greeting = params[:greeting]
+    sender_name = params[:sender_name]
+    sender = params[:sender_email]
+    imagepath = params[:imagepath]
+    linkpath = params[:linkpath]
     #friends = @friends.map(&:to_s)
      #@friends.each_line do |friend|
        #num += 1
       @friends.each do |friend| 
-      MassMailer.welcome(friend,subject,body,sender).deliver
+      MassMailer.welcome(friend,toreply,data,subject,greeting,sender_name,sender,imagepath,linkpath).deliver
     end
     redirect_to root_path
   end  
