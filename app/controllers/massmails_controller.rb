@@ -27,7 +27,8 @@ class MassmailsController < ApplicationController
      #@friends.each_line do |friend|
        #num += 1
       @friends.each do |friend| 
-      LoanMailer.welcome(friend,toreply,data,subject,greeting,sender_name,sender).deliver
+      #LoanMailer.welcome(friend,toreply,data,subject,greeting,sender_name,sender).deliver
+      SendLoanEmailJob.set(wait: 40.seconds).perform_later(friend,toreply,data,subject,greeting,sender_name,sender)
     end
     redirect_to root_path
   end  

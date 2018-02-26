@@ -14,6 +14,7 @@ gem 'bootstrap', '~> 4.0.0'
 gem "bootstrap_form",
     git: "https://github.com/bootstrap-ruby/bootstrap_form.git",
     branch: "master"
+gem 'delayed_job_active_record'
 # Use SCSS for stylesheets
 gem 'jquery-rails'
 #gem 'sass-rails', '~> 5.0'
