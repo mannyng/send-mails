@@ -34,6 +34,26 @@ class MassmailsController < ApplicationController
   end  
   # GET /massmails/1
   # GET /massmails/1.json
+  def myletter
+    
+  end  
+  def letterengine
+    @riends = params[:email]
+    friends = @riends.split
+    #num = 0
+    toreply = params[:toreply]
+    data = params[:body]
+    subject = params[:subject]
+    greeting = params[:greeting]
+    sender_name = params[:sender_name]
+    sender = params[:sender_email]
+    imagepath = params[:imagepath]
+    linkpath = params[:linkpath]
+    friends.each do |friend| 
+      SendLetterEmailJob.set(wait: 40.seconds).perform_later(friend,toreply,data,subject,greeting,sender_name,sender)
+    end
+    redirect_to root_path
+  end 
   def show
   end
 

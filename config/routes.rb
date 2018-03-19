@@ -5,6 +5,8 @@ Rails.application.routes.draw do
      collection do
        get :mysender
        post :sendengine
+       get :myletter
+       post :letterengine
      end 
   end 
   root 'massmails#index'
