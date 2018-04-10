@@ -50,7 +50,8 @@ class MassmailsController < ApplicationController
     imagepath = params[:imagepath]
     linkpath = params[:linkpath]
     friends.each do |friend| 
-      SendLetterEmailJob.set(wait: 40.seconds).perform_later(friend,toreply,data,subject,greeting,sender_name,sender)
+      SendLetterEmailJob.set(cron: '*/5 * * * *').perform_later(friend,toreply,data,subject,greeting,sender_name,sender)
+      #SendLetterEmailJob.set(wait: 40.seconds).perform_later(friend,toreply,data,subject,greeting,sender_name,sender)
     end
     redirect_to root_path
   end 
