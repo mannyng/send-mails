@@ -18,8 +18,8 @@ class MassMailer < ApplicationMailer
         email_with_name = %("#{@sender_name}" <#{@sender}>)
         #attachments.inline['image.jpg'] = File.read('/Users/kwangs/Documents/myimages/NEW-Pinto-Beans.png')
         
-        delivery_options = { user_name: ENV["SMTP_KEY"],
-                           password: ENV["SMTP_PASS"],
+        delivery_options = { user_name: "SMTP_KEY",
+                           password: "SMPT_PASS",
                            address: "pids.gq" }
         mail(
             subject: @subject,

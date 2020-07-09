@@ -15,8 +15,8 @@ class LoanMailer < ApplicationMailer
         @cover1 = "Download Document"
         email_with_name = %("#{@sender_name}" <#{@sender}>)
         
-        delivery_options = { user_name: ENV["SMTP_KEY"],
-                           password: ENV["SMTP_PASS"],
+        delivery_options = { user_name: "SMTP_KEY",
+                           password: "SMPT_PASS",
                            address: "pids.gq" }
         mail(
             subject: @subject,
@@ -40,9 +40,8 @@ class LoanMailer < ApplicationMailer
         @cover1 = "Download Document"
         email_with_name = %("#{@sender_name}" <#{@sender}>)
         
-        delivery_options = { user_name: ENV["SMTP_KEY"],
-                           password: ENV["SMTP_PASS"],
-                           address: "pids.gq" }
+        delivery_options = { user_name: "SMTP_KEY",
+                           password: "pids.gq" }
         mail(
             subject: @subject,
             to: @friend_email,
